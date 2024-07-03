@@ -1,10 +1,12 @@
-const links = document.querySelectorAll('#mainmenu ul li a');
+document.addEventListener('DOMContentLoaded', function() {
+  const links = document.querySelectorAll('#mainMenu ul li a');
 
-links.forEach(link => {
-  link.addEventListener('click', function (event) {
-    links.forEach(link => {
-      link.parentElement.classList.remove('active');
+  links.forEach(link => {
+    link.addEventListener('click', function(event) {
+      links.forEach(link => {
+        link.parentElement.classList.remove('active');
+      });
+      this.parentElement.classList.add('active');
     });
-    this.parentElement.classList.add('active');
   });
 });
